@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 laptop
 cacahuate
 cazador
@@ -6,3 +7,17 @@ iovanna
 aaaayy
 dota
 dota
+=======
+cacahuate
+laptop
+paloma
+raton
+lapiz
+celular
+plato
+vaso
+libreta
+mesa
+telescopio
+iovanna
+>>>>>>> f7e3192a2888fc6b13e7a3962f1a5567f8bfe36e
