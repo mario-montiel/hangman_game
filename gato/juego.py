@@ -8,7 +8,6 @@ class Juego:
     turno = 0
     tablero = np.array([['*',' *', '*'], ['*', '*', '*'], ['*', '*', '*']])
     position = ['00', '01', '02', '10', '11', '12', '20', '21', '22']
-    elementostablero = []
     def posiciones(self):
         while self.intentos <= 0:
             self.turnos()

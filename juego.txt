@@ -1,14 +1,119 @@
+iovanna
+['|', '|', '|', 'a', '|', '|', 'a']
+
+
+   +---+
+   |   |
+   |
+   |
+   |
+   |
+=========  PALABRA CORRECTA, TOTAL DE VIDAS:   5    LETRA USADA:  a
+
+
+
+
+
+
+
+
+
+
+
+['i', '|', '|', 'a', '|', '|', 'a']
+
+
+   +---+
+   |   |
+   |
+   |
+   |
+   |
+=========  PALABRA CORRECTA, TOTAL DE VIDAS:   5    LETRA USADA:  i
+
+
+
+
+
+
+
+
+
+
+
+['i', 'o', '|', 'a', '|', '|', 'a']
+
+
+   +---+
+   |   |
+   |
+   |
+   |
+   |
+=========  PALABRA CORRECTA, TOTAL DE VIDAS:   5    LETRA USADA:  o
+
+
+
+
+
+
+
+
+
+
+
+['i', 'o', 'v', 'a', '|', '|', 'a']
+
+
+   +---+
+   |   |
+   |
+   |
+   |
+   |
+=========  PALABRA CORRECTA, TOTAL DE VIDAS:   5    LETRA USADA:  v
+
+
+
+
+
+
+
+
+
+
+
+['i', 'o', 'v', 'a', 'n', 'n', 'a']
+
+
+   +---+
+   |   |
+   |
+   |
+   |
+   |
+=========  PALABRA CORRECTA, TOTAL DE VIDAS:   5    LETRA USADA:  n
+
+
+
+
+
+
+
+
 
 
 
 
    +---+
    |   |
-   |   O
    |
    |
    |
-=========  PALABRA INCORRECTA, TOTAL DE VIDAS:   4    LETRA USADA:  m
+   |
+=========  PALABRA CORRECTA, TOTAL DE VIDAS:   5    LETRA USADA:  n
+
+
 
 
 
