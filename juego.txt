@@ -1,0 +1,145 @@
+cacahuate
+['|', 'a', '|', 'a', '|', '|', 'a', '|', '|']
+
+
+   +---+
+   |   |
+   |
+   |
+   |
+   |
+=========  PALABRA CORRECTA, TOTAL DE VIDAS:   5    LETRA USADA:  a
+
+
+
+
+
+
+
+
+
+
+
+['c', 'a', 'c', 'a', '|', '|', 'a', '|', '|']
+
+
+   +---+
+   |   |
+   |
+   |
+   |
+   |
+=========  PALABRA CORRECTA, TOTAL DE VIDAS:   5    LETRA USADA:  c
+
+
+
+
+
+
+
+
+
+
+
+['c', 'a', 'c', 'a', 'h', '|', 'a', '|', '|']
+
+
+   +---+
+   |   |
+   |
+   |
+   |
+   |
+=========  PALABRA CORRECTA, TOTAL DE VIDAS:   5    LETRA USADA:  h
+
+
+
+
+
+
+
+
+
+
+
+['c', 'a', 'c', 'a', 'h', 'u', 'a', '|', '|']
+
+
+   +---+
+   |   |
+   |
+   |
+   |
+   |
+=========  PALABRA CORRECTA, TOTAL DE VIDAS:   5    LETRA USADA:  u
+
+
+
+
+
+
+
+
+
+
+
+['c', 'a', 'c', 'a', 'h', 'u', 'a', 't', '|']
+
+
+   +---+
+   |   |
+   |
+   |
+   |
+   |
+=========  PALABRA CORRECTA, TOTAL DE VIDAS:   5    LETRA USADA:  t
+
+
+
+
+
+
+
+
+
+
+
+['c', 'a', 'c', 'a', 'h', 'u', 'a', 't', 'e']
+
+
+   +---+
+   |   |
+   |
+   |
+   |
+   |
+=========  PALABRA CORRECTA, TOTAL DE VIDAS:   5    LETRA USADA:  e
+
+
+
+
+
+
+
+
+
+
+
+
+   +---+
+   |   |
+   |
+   |
+   |
+   |
+=========  PALABRA CORRECTA, TOTAL DE VIDAS:   5    LETRA USADA:  e
+
+
+
+
+
+
+
+
+
+
