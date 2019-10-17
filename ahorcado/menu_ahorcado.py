@@ -5,7 +5,6 @@ from ahorcado.palabra_aleatoria import Palabra_Aleatoria
 from prints.prints import Print
 
 jugar = Jugar()
-aleatorio = Palabra_Aleatoria("palabras.txt", "juego.txt")
 ingresar = Ingresar("palabras.txt")
 prints = Print()
 
@@ -13,13 +12,7 @@ class Ahorcado_Menu:
     def __init__(self):
         print(" --------------- !!!JUEGO DEL AHORCADO!!!  ------------------\n")
         x = prints.ahorcado_seleccion_db()
-        # seleccion = input("¿Desea usar conexión a la base de datos? (s/n)")
         menu = prints.ahorcado_menu()
-        # opcion = input("---- MENU ----\n"
-        # + "0. - Ver las palabras ingresadas \n"
-        # + "1. - Ingresar Palabra\n"
-        # + "2. - Jugar\n"
-        # + "3. - Salir\n")
         while menu != '3':
             if menu == '0':
                 if x != 'n':
@@ -37,6 +30,7 @@ class Ahorcado_Menu:
                 ingresar.ingresarnombre()
                 menu = prints.ahorcado_menu()
             elif menu == '2':
+                aleatorio = Palabra_Aleatoria("palabras.txt", "juego.txt")
                 aleatorio.palabra = ""
                 aleatorio.aleatorio = []
                 aleatorio.seleccionarpalabra()
@@ -50,9 +44,6 @@ class Ahorcado_Menu:
                 jugar.dibujar()
                 print("Debe reiniciar el juego para poder seguir jugando\n")
                 menu = prints.ahorcado_menu()
-            # opcion = input("---- MENU ----\n"
-            # + "0. - Ver Palabras Ingresadas en la bd\n"
-            # + "1. - Ingresar Palabra\n"
-            # + "2. - Jugar\n"
-            # + "3. - Salir\n")
-            # menu
+            else:
+                print("INGRESE UNA NÚMERO DEL MENÚ CORRECTAMENTE")
+                menu = prints.ahorcado_menu()

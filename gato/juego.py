@@ -15,14 +15,13 @@ class Juego:
             # + " * - * - *\n"
             # + " * - * - *]\n")
             posicion = input("SELECCIONA UNA POSICIÓN\n" + str(self.position) + "\n")
+            if len(posicion) > 2 or len(posicion) < 2:
+                print("INGRESE LOS CARACTERES CORRECTOS PORFAVOR")
+                return False
+            print(posicion)
+            print(str(posicion[0] + ',' + posicion[1]))
 
-            # print(posicion[0])
             self.tablero[0,1] =  "x"
-            print(self.tablero)
-            print(self.position)
-            # for i in range(len(self.tablero)):
-            #     for j in range(len(self.tablero[i])):
-            #         print(self.tablero[i][j], end=' ')
             self.turno += 1
 
     def turnos(self):
