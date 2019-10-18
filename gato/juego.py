@@ -6,7 +6,7 @@ class Juego:
     intentos = 0
     jugador = ""
     turno = 0
-    tablero = np.array([['*',' *', '*'], ['*', '*', '*'], ['*', '*', '*']])
+    tablero = np.array([['00', '01', '02'], ['10', '11', '12'], ['20', '21', '22']])
     position = ['00', '01', '02', '10', '11', '12', '20', '21', '22']
     def posiciones(self):
         while self.intentos <= 0:
@@ -18,6 +18,12 @@ class Juego:
             # Cambiamos el simbolo '*' por el símbolo dependiendo el turno del jugador
             if self.jugador == "JUGADOR 1":
                 #Verificamos si se quiere poner una ubicación correcta en el tablero
+                if int(posicion[0]) < 0 or int(posicion[0]) > 2 or int(posicion[1]) < 0 or int(posicion[1]) > 2:
+                    while int(posicion[0]) < 0 or int(posicion[0]) > 2 or int(posicion[1]) < 0 or int(posicion[1]) > 2:
+                        print("RANGO FUERA DEL INDICADO")
+                        # os.system('cls')
+                        print("INGRESE LOS CARACTERES CORRECTOS PORFAVOR")
+                        posicion = input("SELECCIONA UNA POSICIÓN\n" + str(self.position) + "\n")
                 if len(posicion) == 2:
                     posicion1 = int(posicion[0])
                     posicion2 = int(posicion[1])
@@ -51,12 +57,13 @@ class Juego:
                     self.position.remove(posicion)
                     self.turno += 1
 
+            self.ganar()
+
             if len(self.position) == 0:
                 print("JUEGO TERMINADO .... NADIE GANÓ !!!!")
                 break
 
             print(self.tablero)
-            self.ganar()
         self.limpiar()
 
     def turnos(self):
@@ -96,4 +103,4 @@ class Juego:
     def limpiar(self):
         self.tablero = np.array([['*',' *', '*'], ['*', '*', '*'], ['*', '*', '*']])
         self.intentos = 0
-        self.position = ['01', '02', '03', '11', '12', '13', '21', '22', '23']
+        self.position = ['00', '01', '02', '10', '11', '12', '20', '21', '22']

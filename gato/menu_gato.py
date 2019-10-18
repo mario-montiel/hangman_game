@@ -6,11 +6,11 @@ class Gato_Menu:
         opcion = input("---- MENU ----\n"
                     + "1. - Jugar\n"
                     + "2. - Salir\n")
-        while opcion != '3':
+        while opcion != '2':
                 if opcion == '1':
                     jugar.posiciones()
                 elif opcion == '2':
-                    print("OPCION 1")
+                    break
                 opcion = input("---- MENU ----\n"
                             + "1. - Jugar\n"
                             + "2. - Salir\n")
