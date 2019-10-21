@@ -1,6 +1,5 @@
 from ahorcado.menu_ahorcado import Ahorcado_Menu
 from gato.menu_gato import Gato_Menu
-
 option = input("¿Seleccione el juego a jugar?\n"
                + "1. - Ahorcado\n"
                + "2. - Gato\n"

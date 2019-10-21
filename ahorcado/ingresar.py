@@ -1,4 +1,6 @@
 from random import shuffle
+from prints.prints import Print
+prints = Print()
 class Ingresar:
     palabra = ""
     archivo_escrito = []
@@ -7,21 +9,21 @@ class Ingresar:
         self.archivo_escrito = lista
 
     def ingresarnombre(self):
-        opc = input("¿Desea agregar una palabra? (s/n)\n")
+        opc = prints.agregar_palabra()
         while opc.lower() != 'n':
-            palabra = str(input("Ingrese una palabra\n"))
+            palabra = prints.ingrese_una_palabra()
             try:
                 from database.bd import Conexion
                 db = Conexion()
                 db.database(palabra)
             except:
-                print("NO SE ENCONTRÓ NINGUNA BASE DE DATOS")
+                prints.db_notfound()
             self.palabra = palabra
             archivo = open("palabras.txt", "a")
             archivo.write("\n" + str(palabra))
             archivo.close()
-            print("La palabra se agregó correctamente en el texto \n")
-            opc = input("¿Desea agregar una palabra? (s/n)\n")
+            prints.se_agrego_correctamente()
+            opc = prints.agregar_palabra()
 
     def ver_lista(self):
         print("lista" + str(self.archivo_escrito))
