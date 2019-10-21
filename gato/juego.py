@@ -15,8 +15,9 @@ class Juego:
 
             os.system('cls')
 
-            # Cambiamos el simbolo '*' por el símbolo dependiendo el turno del jugador
-            if self.jugador == "JUGADOR 1":
+            # Cambiamos el número de la posición del arreglo position por el
+            # símbolo dependiendo el turno del jugador
+            if self.jugador == "JUGADOR 1 (x)":
                 #Verificamos si se quiere poner una ubicación correcta en el tablero
                 if int(posicion[0]) < 0 or int(posicion[0]) > 2 or int(posicion[1]) < 0 or int(posicion[1]) > 2:
                     while int(posicion[0]) < 0 or int(posicion[0]) > 2 or int(posicion[1]) < 0 or int(posicion[1]) > 2:
@@ -68,10 +69,10 @@ class Juego:
 
     def turnos(self):
         if self.turno % 2:
-            self.jugador = "JUGADOR 2"
+            self.jugador = "JUGADOR 2 (o)"
             print(self.jugador)
         else:
-            self.jugador = "JUGADOR 1"
+            self.jugador = "JUGADOR 1 (x)"
             print(self.jugador)
 
     def ganar(self):

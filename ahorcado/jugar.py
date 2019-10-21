@@ -10,9 +10,7 @@ class Jugar:
     tipo_letra = ""
     indice = 0
     verificar = []
-    puntos = 0
     a = ""
-    # usuario = ""
     correcta = []
     existe = False
 
@@ -41,12 +39,10 @@ class Jugar:
                         print("ESTA LETRA YA LA HABÍAS INGRESADO")
                 indice+=1
                 self.indice = indice
-            print("CADENA: " + cadena)
             for i in self.i:
                 if self.palabra[i] == carac.lower():
                     self.pruebon[i] = carac.lower()
                     self.comprobar = 1
-                    self.puntos += 10
                 else:
                     self.comprobar = 0
             archivo = open("juego.txt", "a")
@@ -55,10 +51,6 @@ class Jugar:
             self.a = "".join(self.pruebon)
             self.vidas()
             self.dibujar()
-        # print("PUNTOS: " + str(self.puntos))
-        # db.usuario = self.usuario
-        # db.puntos = self.puntos
-        # db.database(4)
 
     def vidas(self):
         if self.comprobar == 1:
@@ -70,12 +62,10 @@ class Jugar:
             print("JUEGO TERMINADO")
             print("SE TE TERMINARON TODAS TUS VIDAS")
             print("La palabra adivinar era: " + str(self.palabra))
-            print("PUNTOS TOTALES: " + str(self.puntos))
         elif self.verificar[0:self.indice] == self.palabra:
             print("JUEGO TERMINADO")
             print("COMPLETÓ TODAS LAS PALABRAS")
             print("La palabra adivinar era: " + str(self.palabra))
-            print("PUNTOS TOTALES: " + str(self.puntos))
 
     def dibujar(self):
         error_uno = ""

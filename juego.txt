@@ -1,5 +1,5 @@
-iovanna
-['|', '|', '|', 'a', '|', '|', 'a']
+laptop
+['|', 'a', '|', '|', '|', '|']
 
 
    +---+
@@ -20,7 +20,7 @@ iovanna
 
 
 
-['i', '|', '|', 'a', '|', '|', 'a']
+['l', 'a', '|', '|', '|', '|']
 
 
    +---+
@@ -29,7 +29,7 @@ iovanna
    |
    |
    |
-=========  PALABRA CORRECTA, TOTAL DE VIDAS:   5    LETRA USADA:  i
+=========  PALABRA CORRECTA, TOTAL DE VIDAS:   5    LETRA USADA:  l
 
 
 
@@ -41,28 +41,7 @@ iovanna
 
 
 
-['i', 'o', '|', 'a', '|', '|', 'a']
-
-
-   +---+
-   |   |
-   |
-   |
-   |
-   |
-=========  PALABRA CORRECTA, TOTAL DE VIDAS:   5    LETRA USADA:  o
-
-
-
-
-
-
-
-
-
-
-
-['i', 'o', 'v', 'a', '|', '|', 'a']
+['l', 'a', 'p', '|', '|', 'p']
 
 
    +---+
@@ -71,7 +50,7 @@ iovanna
    |
    |
    |
-=========  PALABRA CORRECTA, TOTAL DE VIDAS:   5    LETRA USADA:  v
+=========  PALABRA CORRECTA, TOTAL DE VIDAS:   5    LETRA USADA:  p
 
 
 
@@ -83,37 +62,79 @@ iovanna
 
 
 
-['i', 'o', 'v', 'a', 'n', 'n', 'a']
-
-
-   +---+
-   |   |
-   |
-   |
-   |
-   |
-=========  PALABRA CORRECTA, TOTAL DE VIDAS:   5    LETRA USADA:  n
-
-
-
-
-
-
-
-
+['l', 'a', 'p', '|', '|', 'p']
 
 
 
 
    +---+
    |   |
+   |   O
    |
    |
    |
-   |
-=========  PALABRA CORRECTA, TOTAL DE VIDAS:   5    LETRA USADA:  n
+=========  PALABRA INCORRECTA, TOTAL DE VIDAS:   4    LETRA USADA:  i
 
 
+
+
+
+
+
+
+
+['l', 'a', 'p', 't', '|', 'p']
+
+
+
+
+   +---+
+   |   |
+   |   O
+   |
+   |
+   |
+=========  PALABRA CORRECTA, TOTAL DE VIDAS:   4    LETRA USADA:  t
+
+
+
+
+
+
+
+
+
+['l', 'a', 'p', 't', 'o', 'p']
+
+
+
+
+   +---+
+   |   |
+   |   O
+   |
+   |
+   |
+=========  PALABRA CORRECTA, TOTAL DE VIDAS:   4    LETRA USADA:  o
+
+
+
+
+
+
+
+
+
+
+
+
+   +---+
+   |   |
+   |   O
+   |
+   |
+   |
+=========  PALABRA CORRECTA, TOTAL DE VIDAS:   4    LETRA USADA:  o
 
 
 

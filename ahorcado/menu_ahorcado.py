@@ -15,6 +15,7 @@ class Ahorcado_Menu:
         menu = prints.ahorcado_menu()
         while menu != '3':
             if menu == '0':
+                ingresar = Ingresar("palabras.txt")
                 if x != 'n':
                     try:
                         from database.bd import Conexion
@@ -22,6 +23,7 @@ class Ahorcado_Menu:
                         db.database(1)
                     except:
                         print("\nNO SE ENCUENTRÓ NINGUNA BASE DE DATOS\n")
+                    ingresar.ver_lista()
                     menu = prints.ahorcado_menu()
                 else:
                     ingresar.ver_lista()

@@ -24,4 +24,6 @@ class Ingresar:
             opc = input("¿Desea agregar una palabra? (s/n)\n")
 
     def ver_lista(self):
-        print("lista" + str(self.archivo_escrito))
+        print("LISTA: ")
+        for i in self.archivo_escrito:
+            print(i)
