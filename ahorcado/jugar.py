@@ -1,4 +1,8 @@
 import os
+from prints.prints import Print
+from dibujos.dibujos import Dibujos
+dibujos = Dibujos()
+prints = Print()
 class Jugar:
     palabra = ""
     letra = ''
@@ -19,9 +23,9 @@ class Jugar:
     def encuentra(self):
         while self.vida > 0 and self.a[0:self.indice] != self.palabra:
             # db.fin = 1
-            letra = (str(input("Ingrese una letra para adivinar la palabra\n")))
+            letra = prints.ingrese_letra()
             if len(letra) != 1:
-                print("INGRESE SOLO 1 CARACTER")
+                prints.solo_un_caracter()
             self.letra = letra.lower()
             cadena = self.palabra
             carac = letra.lower()
@@ -36,12 +40,12 @@ class Jugar:
                             self.existe = True
                     if self.existe == False:
                         self.correcta.append(carac)
-                        print("LETRAS INGRESADAS: " + str(self.correcta))
+                        prints.letras_correctas(str(self.correcta))
                     else:
-                        print("ESTA LETRA YA LA HABÍAS INGRESADO")
+                        prints.letra_ya_ingresada()
                 indice+=1
                 self.indice = indice
-            print("CADENA: " + cadena)
+            prints.cadena(cadena)
             for i in self.i:
                 if self.palabra[i] == carac.lower():
                     self.pruebon[i] = carac.lower()
@@ -67,15 +71,15 @@ class Jugar:
             self.vida = self.vida - 1
             self.tipo_letra = "INCORRECTA"
         if self.vida <= 0:
-            print("JUEGO TERMINADO")
-            print("SE TE TERMINARON TODAS TUS VIDAS")
-            print("La palabra adivinar era: " + str(self.palabra))
-            print("PUNTOS TOTALES: " + str(self.puntos))
+            prints.juego_terminado()
+            prints.vidas_terminadas()
+            prints.la_palabra_a_Adivinar_era(str(self.palabra))
+            prints.puntos_totales(str(self.puntos))
         elif self.verificar[0:self.indice] == self.palabra:
-            print("JUEGO TERMINADO")
-            print("COMPLETÓ TODAS LAS PALABRAS")
-            print("La palabra adivinar era: " + str(self.palabra))
-            print("PUNTOS TOTALES: " + str(self.puntos))
+            prints.juego_terminado()
+            prints.completo_vidas()
+            prints.la_palabra_a_Adivinar_era(str(self.palabra))
+            prints.puntos_totales(str(self.puntos))
 
     def dibujar(self):
         error_uno = ""
@@ -86,92 +90,44 @@ class Jugar:
         inicio = ""
 
         if self.vida == 5:
-            inicio = '''
-   +---+
-   |   |
-   |
-   |
-   |
-   |
-=========  PALABRA ''' + self.tipo_letra + ''', TOTAL DE VIDAS:   '''+str(self.vida) +'''    LETRA USADA:  '''+self.letra
+            inicio = dibujos.inicio(self.tipo_letra, str(self.vida),self.letra )
             print(self.pruebon[0:self.indice])
-            print(inicio)
         archivo = open("juego.txt", "a")
         archivo.write("\n" + str(inicio) + "\n")
         archivo.close()
 
         if self.vida == 4:
-            error_uno = '''
-   +---+
-   |   |
-   |   O
-   |
-   |
-   |
-=========  PALABRA ''' + self.tipo_letra + ''', TOTAL DE VIDAS:   '''+str(self.vida) +'''    LETRA USADA:  '''+self.letra
+            error_uno = dibujos.error_uno(self.tipo_letra, str(self.vida),self.letra )
             print(self.pruebon[0:self.indice])
-            print(error_uno)
         archivo = open("juego.txt", "a")
         archivo.write("\n" + str(error_uno) + "\n")
         archivo.close()
 
         if self.vida == 3:
-            error_dos = '''
-   +---+
-   |   |
-   |   O
-   |   |
-   |
-   |
-=========  PALABRA ''' + self.tipo_letra + ''', TOTAL DE VIDAS:   '''+str(self.vida) +'''    LETRA USADA:  '''+self.letra
+            error_dos = dibujos.error_dos(self.tipo_letra, str(self.vida),self.letra )
             print(self.pruebon[0:self.indice])
-            print(error_dos)
         archivo = open("juego.txt", "a")
         archivo.write("\n" + str(error_dos) + "\n")
         archivo.close()
 
         if self.vida == 2:
-            error_tres = '''
-   +---+
-   |   |
-   |   O
-   |  /|\
-   |
-   |
-=========  PALABRA ''' + self.tipo_letra + ''', TOTAL DE VIDAS:   '''+str(self.vida) +'''    LETRA USADA:  '''+self.letra
+            error_tres = dibujos.error_tres(self.tipo_letra, str(self.vida),self.letra )
             print(self.pruebon[0:self.indice])
-            print(error_tres)
         archivo = open("juego.txt", "a")
         archivo.write("\n" + str(error_tres) + "\n")
         archivo.close()
 
         if self.vida == 1:
-            error_cuatro = '''
-   +---+
-   |   |
-   |   O
-   |  /|\
-   |  /
-   |
-=========  PALABRA ''' + self.tipo_letra + ''', TOTAL DE VIDAS:   '''+str(self.vida) +'''    LETRA USADA:  '''+self.letra
+            error_cuatro = dibujos.error_cuatro(self.tipo_letra, str(self.vida),self.letra )
             print(self.pruebon[0:self.indice])
-            print(error_cuatro)
         archivo = open("juego.txt", "a")
         archivo.write("\n" + str(error_cuatro) + "\n")
         archivo.close()
 
         if self.vida == 0:
-            error_final = '''
-   +---+
-   |   |
-   |   O
-   |  /|\
-   |  / \
-   |
-=========  PALABRA ''' + self.tipo_letra + ''', TOTAL DE VIDAS:   '''+str(self.vida) +'''    LETRA USADA:  '''+self.letra
+            error_final = dibujos.error_final(self.tipo_letra, str(self.vida),self.letra )
             print(self.pruebon[0:self.indice])
-            print(error_final)
-            print("LA PALABRA ADIVINAR ERA: " + str(self.palabra))
+            prints.la_palabra_a_Adivinar_era(str(self.palabra))
             self.pruebon = []
         archivo = open("juego.txt", "a")
         archivo.write("\n" + str(error_final) + "\n")

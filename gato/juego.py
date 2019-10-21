@@ -1,6 +1,8 @@
 # import numeric
 import os
 import numpy as np
+from prints.prints import Print
+prints = Print()
 class Juego:
     # juego = Juego()
     intentos = 0
@@ -11,8 +13,7 @@ class Juego:
     def posiciones(self):
         while self.intentos <= 0:
             self.turnos()
-            posicion = input("SELECCIONA UNA POSICIÓN\n" + str(self.position) + "\n")
-
+            posicion = prints.posicion(str(self.position))
             os.system('cls')
 
             # Cambiamos el simbolo '*' por el símbolo dependiendo el turno del jugador
@@ -20,20 +21,20 @@ class Juego:
                 #Verificamos si se quiere poner una ubicación correcta en el tablero
                 if int(posicion[0]) < 0 or int(posicion[0]) > 2 or int(posicion[1]) < 0 or int(posicion[1]) > 2:
                     while int(posicion[0]) < 0 or int(posicion[0]) > 2 or int(posicion[1]) < 0 or int(posicion[1]) > 2:
-                        print("RANGO FUERA DEL INDICADO")
+                        prints.rango_fuera_del_indicado()
                         # os.system('cls')
-                        print("INGRESE LOS CARACTERES CORRECTOS PORFAVOR")
-                        posicion = input("SELECCIONA UNA POSICIÓN\n" + str(self.position) + "\n")
+                        prints.ingrese_caracteres_correctos()
+                        posicion = prints.posicion(str(self.position))
                 if len(posicion) == 2:
                     posicion1 = int(posicion[0])
                     posicion2 = int(posicion[1])
                 else:
                     while len(posicion) != 2:
                         os.system('cls')
-                        print("INGRESE LOS CARACTERES CORRECTOS PORFAVOR")
-                        posicion = input("SELECCIONA UNA POSICIÓN\n" + str(self.position) + "\n")
+                        prints.ingrese_caracteres_correctos()
+                        posicion = prints.posicion(str(self.position))
                 if self.tablero[posicion1, posicion2] ==  "x" or self.tablero[posicion1, posicion2] ==  "o":
-                    print("SE REPITE")
+                    prints.se_repite()
                 else:
                     self.tablero[posicion1, posicion2] =  "x"
                     # Eliminamos el elemento ingresado del array position
@@ -47,10 +48,10 @@ class Juego:
                 else:
                     while len(posicion) != 2:
                         os.system('cls')
-                        print("INGRESE LOS CARACTERES CORRECTOS PORFAVOR")
-                        posicion = input("SELECCIONA UNA POSICIÓN\n" + str(self.position) + "\n")
+                        prints.ingrese_caracteres_correctos()
+                        posicion = prints.posicion(str(self.position))
                 if self.tablero[posicion1, posicion2] ==  "x" or self.tablero[posicion1, posicion2] ==  "o":
-                    print("SE INGRESÓ LA MISMA POSICIÓN, INGRESE UNA POSICIÓN DIFERENTE Y QUE SEA CORRECTA")
+                    prints.misma_posicion()
                 else:
                     self.tablero[posicion1, posicion2] =  "o"
                     # Eliminamos el elemento ingresado del array position
@@ -60,7 +61,7 @@ class Juego:
             self.ganar()
 
             if len(self.position) == 0:
-                print("JUEGO TERMINADO .... NADIE GANÓ !!!!")
+                prints.nadie_gano()
                 break
 
             print(self.tablero)
@@ -77,28 +78,28 @@ class Juego:
     def ganar(self):
         if self.tablero[0,0] == 'x' and self.tablero[0,1] == 'x' and self.tablero[0,2] == 'x' or self.tablero[0,0] == 'o' and self.tablero[0,1] == 'o' and self.tablero[0,2] == 'o':
             self.intentos = 1
-            print("GANASTE " + str(self.jugador))
+            prints.ganaste(str(self.jugador))
         elif self.tablero[1,0] == 'x' and self.tablero[1,1] == 'x' and self.tablero[1,2] == 'x' or self.tablero[1,0] == 'o' and self.tablero[1,1] == 'o' and self.tablero[1,2] == 'o':
             self.intentos = 1
-            print("GANASTE " + str(self.jugador))
+            prints.ganaste(str(self.jugador))
         elif self.tablero[2,0] == 'x' and self.tablero[2,1] == 'x' and self.tablero[2,2] == 'x' or self.tablero[2,0] == 'o' and self.tablero[2,1] == 'o' and self.tablero[2,2] == 'o':
             self.intentos = 1
-            print("GANASTE " + str(self.jugador))
+            prints.ganaste(str(self.jugador))
         elif self.tablero[0,0] == 'x' and self.tablero[1,1] == 'x' and self.tablero[2,2] == 'x' or self.tablero[0,0] == 'o' and self.tablero[1,1] == 'o' and self.tablero[2,2] == 'o':
             self.intentos = 1
-            print("GANASTE " + str(self.jugador))
+            prints.ganaste(str(self.jugador))
         elif self.tablero[2,0] == 'x' and self.tablero[1,1] == 'x' and self.tablero[0,2] == 'x' or self.tablero[2,0] == 'o' and self.tablero[1,1] == 'o' and self.tablero[0,2] == 'o':
             self.intentos = 1
-            print("GANASTE " + str(self.jugador))
+            prints.ganaste(str(self.jugador))
         elif self.tablero[0,0] == 'x' and self.tablero[1,0] == 'x' and self.tablero[2,0] == 'x' or self.tablero[0,0] == 'o' and self.tablero[1,0] == 'o' and self.tablero[2,0] == 'o':
             self.intentos = 1
-            print("GANASTE " + str(self.jugador))
+            prints.ganaste(str(self.jugador))
         elif self.tablero[0,1] == 'x' and self.tablero[1,1] == 'x' and self.tablero[2,1] == 'x' or self.tablero[0,1] == 'o' and self.tablero[1,1] == 'o' and self.tablero[2,1] == 'o':
             self.intentos = 1
-            print("GANASTE " + str(self.jugador))
+            prints.ganaste(str(self.jugador))
         elif self.tablero[0,2] == 'x' and self.tablero[1,2] == 'x' and self.tablero[2,2] == 'x' or self.tablero[0,2] == 'o' and self.tablero[1,2] == 'o' and self.tablero[2,2] == 'o':
             self.intentos = 1
-            print("GANASTE " + str(self.jugador))
+            prints.ganaste(str(self.jugador))
 
     def limpiar(self):
         self.tablero = np.array([['*',' *', '*'], ['*', '*', '*'], ['*', '*', '*']])

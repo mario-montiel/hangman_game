@@ -1,4 +1,6 @@
 from random import shuffle
+from prints.prints import Print
+prints = Print()
 # from bd import *
 # db = conexion()
 class Palabra_Aleatoria:
@@ -13,7 +15,7 @@ class Palabra_Aleatoria:
         # lista_juego = [line.rstrip() for line in open(archivo_juego)]
         self.archivo_escrito = list(set(self.lista1))
         # self.archivo_juego = lista_juego
-        print("CARGANDO DATOS DE LA LISTA... \n")
+        prints.cargando_datos_lista()
 
     # def cargarDB(self):
     #     print("CARGANDO DATOS EN LA BASE DE DATOS... \n")

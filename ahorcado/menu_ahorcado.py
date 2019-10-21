@@ -3,7 +3,6 @@ from ahorcado.ingresar import Ingresar
 from ahorcado.jugar import Jugar
 from ahorcado.palabra_aleatoria import Palabra_Aleatoria
 from prints.prints import Print
-
 jugar = Jugar()
 ingresar = Ingresar("palabras.txt")
 prints = Print()
@@ -39,7 +38,7 @@ class Ahorcado_Menu:
                 aleatorio.aleatorio = []
                 aleatorio.seleccionarpalabra()
                 os.system('cls')
-                print("La palabra adivinar es: " + str(aleatorio.aleatorio))
+                prints.palabra_a_adivinar(str(aleatorio.aleatorio))
                 #prints.palabra_a_adivinar(str(aleatorio.aleatorio))
                 prints.empecemos()
                 jugar.palabra = aleatorio.palabra

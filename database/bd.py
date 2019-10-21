@@ -1,3 +1,5 @@
+from prints.prints import Print
+prints = Print()
 class Conexion:
     def database(self, palabra):
         import mysql.connector
@@ -9,7 +11,7 @@ class Conexion:
         }
 
         try:
-            print("PALABRA USADA: " + str(palabra))
+            prints.palabra_usada(str(palabra))
             conexion = mysql.connector.connect(**db)
             cursor = conexion.cursor()
             resultado = ""
@@ -17,10 +19,11 @@ class Conexion:
                 consulta = "select * from palabras"
                 cursor.execute(consulta)
                 resultado = cursor.fetchall()
-                print("\nPALABRAS INGRESADAS EN LA BASE DE DATOS:")
+                prints.palabras_ingresadas_a_bd()
                 for i in resultado:
-                    print(str(i[1]))
-                print("\n")
+                    prints.i(str(i[1]))
+                    # print(str(i[1]))
+                prints.n()
             # elif palabra == 2:
             #     consulta = "select * from palabras"
             #     cursor.execute(consulta)
@@ -68,6 +71,4 @@ class Conexion:
             conexion.commit()
             return resultado
         except:
-            print("!!!NO HAY CONEXION A LA BASE DE DATOS!!!\n"
-            + "SE LIMITARÁN ALGUNAS FUNCIONES")
-            return ""
+            prints.no_hay_conexion_en_la_bd()

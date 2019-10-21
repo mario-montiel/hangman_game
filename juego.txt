@@ -1,15 +1,9 @@
-iovanna
-['|', '|', '|', 'a', '|', '|', 'a']
+andres
+['|', '|', '|', '|', '|', '|']
 
 
-   +---+
-   |   |
-   |
-   |
-   |
-   |
-=========  PALABRA CORRECTA, TOTAL DE VIDAS:   5    LETRA USADA:  a
 
+None
 
 
 
@@ -19,19 +13,13 @@ iovanna
 
 
 
+['|', '|', '|', '|', '|', '|']
 
-['i', '|', '|', 'a', '|', '|', 'a']
 
 
-   +---+
-   |   |
-   |
-   |
-   |
-   |
-=========  PALABRA CORRECTA, TOTAL DE VIDAS:   5    LETRA USADA:  i
 
 
+None
 
 
 
@@ -39,19 +27,13 @@ iovanna
 
 
 
+['|', '|', '|', '|', '|', 's']
 
 
-['i', 'o', '|', 'a', '|', '|', 'a']
 
 
-   +---+
-   |   |
-   |
-   |
-   |
-   |
-=========  PALABRA CORRECTA, TOTAL DE VIDAS:   5    LETRA USADA:  o
 
+None
 
 
 
@@ -59,19 +41,13 @@ iovanna
 
 
 
+['a', '|', '|', '|', '|', 's']
 
 
 
-['i', 'o', 'v', 'a', '|', '|', 'a']
 
 
-   +---+
-   |   |
-   |
-   |
-   |
-   |
-=========  PALABRA CORRECTA, TOTAL DE VIDAS:   5    LETRA USADA:  v
+None
 
 
 
@@ -79,39 +55,49 @@ iovanna
 
 
 
+['a', '|', '|', '|', '|', 's']
 
 
 
 
-['i', 'o', 'v', 'a', 'n', 'n', 'a']
 
 
-   +---+
-   |   |
-   |
-   |
-   |
-   |
-=========  PALABRA CORRECTA, TOTAL DE VIDAS:   5    LETRA USADA:  n
 
+None
 
 
 
 
 
+['a', '|', '|', '|', '|', 's']
 
 
 
 
 
 
-   +---+
-   |   |
-   |
-   |
-   |
-   |
-=========  PALABRA CORRECTA, TOTAL DE VIDAS:   5    LETRA USADA:  n
+
+
+
+None
+
+
+
+['a', '|', '|', '|', '|', 's']
+
+
+
+
+
+
+
+
+
+
+
+None
+
+
 
 
 

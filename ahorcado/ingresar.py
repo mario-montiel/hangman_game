@@ -26,4 +26,4 @@ class Ingresar:
             opc = prints.agregar_palabra()
 
     def ver_lista(self):
-        print("lista" + str(self.archivo_escrito))
+        prints.ver_la_lista(str(self.archivo_escrito))
