@@ -1,14 +1,8 @@
-laptop
-['|', 'a', '|', '|', '|', '|']
+vegetal
+['|', '|', '|', '|', '|', 'a', '|']
 
+None
 
-   +---+
-   |   |
-   |
-   |
-   |
-   |
-=========  PALABRA CORRECTA, TOTAL DE VIDAS:   5    LETRA USADA:  a
 
 
 
@@ -19,17 +13,11 @@ laptop
 
 
 
+['v', '|', '|', '|', '|', 'a', '|']
 
-['l', 'a', '|', '|', '|', '|']
+None
 
 
-   +---+
-   |   |
-   |
-   |
-   |
-   |
-=========  PALABRA CORRECTA, TOTAL DE VIDAS:   5    LETRA USADA:  l
 
 
 
@@ -39,18 +27,12 @@ laptop
 
 
 
+['v', 'e', '|', 'e', '|', 'a', '|']
 
+None
 
-['l', 'a', 'p', '|', '|', 'p']
 
 
-   +---+
-   |   |
-   |
-   |
-   |
-   |
-=========  PALABRA CORRECTA, TOTAL DE VIDAS:   5    LETRA USADA:  p
 
 
 
@@ -59,66 +41,49 @@ laptop
 
 
 
+['v', 'e', 'g', 'e', '|', 'a', '|']
 
+None
 
 
-['l', 'a', 'p', '|', '|', 'p']
 
 
 
 
-   +---+
-   |   |
-   |   O
-   |
-   |
-   |
-=========  PALABRA INCORRECTA, TOTAL DE VIDAS:   4    LETRA USADA:  i
 
 
 
 
 
+['v', 'e', 'g', 'e', '|', 'a', '|']
 
 
 
+None
 
-['l', 'a', 'p', 't', '|', 'p']
 
 
 
 
-   +---+
-   |   |
-   |   O
-   |
-   |
-   |
-=========  PALABRA CORRECTA, TOTAL DE VIDAS:   4    LETRA USADA:  t
 
 
 
 
+['v', 'e', 'g', 'e', '|', 'a', '|']
 
 
 
 
 
-['l', 'a', 'p', 't', 'o', 'p']
+None
 
 
 
 
-   +---+
-   |   |
-   |   O
-   |
-   |
-   |
-=========  PALABRA CORRECTA, TOTAL DE VIDAS:   4    LETRA USADA:  o
 
 
 
+['v', 'e', 'g', 'e', '|', 'a', '|']
 
 
 
@@ -126,15 +91,43 @@ laptop
 
 
 
+None
 
 
-   +---+
-   |   |
-   |   O
-   |
-   |
-   |
-=========  PALABRA CORRECTA, TOTAL DE VIDAS:   4    LETRA USADA:  o
+
+
+
+['v', 'e', 'g', 'e', '|', 'a', '|']
+
+
+
+
+
+
+
+
+
+None
+
+
+
+['v', 'e', 'g', 'e', '|', 'a', '|']
+
+
+
+
+
+
+
+
+
+
+
+None
+
+
+
+
 
 
 

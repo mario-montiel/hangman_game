@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 cacahuate
 laptop
 paloma
@@ -11,3 +12,10 @@ pelota
 gato
 perro
 silla
+=======
+iovanna
+andres
+hola
+rap
+pepe
+>>>>>>> 015d8be6e1717a1f5fb853ac5024acdda6d98d24

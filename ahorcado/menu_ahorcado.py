@@ -3,15 +3,18 @@ from ahorcado.ingresar import Ingresar
 from ahorcado.jugar import Jugar
 from ahorcado.palabra_aleatoria import Palabra_Aleatoria
 from prints.prints import Print
-
 jugar = Jugar()
 ingresar = Ingresar("palabras.txt")
 prints = Print()
 
+
 class Ahorcado_Menu:
     def __init__(self):
-        print(" --------------- !!!JUEGO DEL AHORCADO!!!  ------------------\n")
+        # Print de "EMPECEMOS"
+        prints.juego_ahorcado()
+        # PRINT DE CONEXION A BD
         x = prints.ahorcado_seleccion_db()
+        # PRINT DE MENU
         menu = prints.ahorcado_menu()
         while menu != '3':
             if menu == '0':
@@ -22,8 +25,7 @@ class Ahorcado_Menu:
                         db = Conexion()
                         db.database(1)
                     except:
-                        print("\nNO SE ENCUENTRÓ NINGUNA BASE DE DATOS\n")
-                    ingresar.ver_lista()
+                        prints.sin_conexion()
                     menu = prints.ahorcado_menu()
                 else:
                     ingresar.ver_lista()
@@ -37,15 +39,16 @@ class Ahorcado_Menu:
                 aleatorio.aleatorio = []
                 aleatorio.seleccionarpalabra()
                 os.system('cls')
-                print("La palabra adivinar es: " + str(aleatorio.aleatorio))
-                print("-- !!EMPECEMOS!! --")
+                prints.palabra_a_adivinar(str(aleatorio.aleatorio))
+                # prints.palabra_a_adivinar(str(aleatorio.aleatorio))
+                prints.empecemos()
                 jugar.palabra = aleatorio.palabra
                 jugar.limpiar()
                 jugar.encuentra()
                 jugar.vidas()
                 jugar.dibujar()
-                print("Debe reiniciar el juego para poder seguir jugando\n")
+                prints.debe_reiniciar()
                 menu = prints.ahorcado_menu()
             else:
-                print("INGRESE UNA NÚMERO DEL MENÚ CORRECTAMENTE")
+                prints.seleccione_opc_correcta()
                 menu = prints.ahorcado_menu()
