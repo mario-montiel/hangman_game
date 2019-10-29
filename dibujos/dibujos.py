@@ -1,3 +1,5 @@
+import sys
+import numpy as np
 class Dibujos:
     def inicio(self, tipo_letra, vidas, letra_usada):
         inicio = '''
@@ -8,7 +10,7 @@ class Dibujos:
         |
         |
         =========  LETRA ''' + tipo_letra + ''', TOTAL DE VIDAS:   '''+ vidas +'''    LETRA USADA:  '''+ letra_usada
-        print(inicio)
+        sys.stdout.write(inicio)
     def error_uno(self, tipo_letra, vidas, letra_usada):
         error_uno = '''
         +---+
@@ -18,7 +20,7 @@ class Dibujos:
         |
         |
         =========  LETRA ''' + tipo_letra + ''', TOTAL DE VIDAS:   '''+ vidas +'''    LETRA USADA:  '''+ letra_usada
-        print(error_uno)
+        sys.stdout.write(error_uno)
     def error_dos(self, tipo_letra, vidas, letra_usada):
         error_dos = '''
         +---+
@@ -28,7 +30,7 @@ class Dibujos:
         |
         |
         =========  LETRA ''' + tipo_letra + ''', TOTAL DE VIDAS:   '''+ vidas +'''    LETRA USADA:  '''+ letra_usada
-        print(error_dos)
+        sys.stdout.write(error_dos)
     def error_tres(self, tipo_letra, vidas, letra_usada):
         error_tres = '''
         +---+
@@ -38,7 +40,7 @@ class Dibujos:
         |
         |
         =========  LETRA ''' + tipo_letra + ''', TOTAL DE VIDAS:   '''+ vidas +'''    LETRA USADA:  '''+ letra_usada
-        print(error_tres)
+        sys.stdout.write(error_tres)
     def error_cuatro(self, tipo_letra, vidas, letra_usada):
         error_cuatro = '''
         +---+
@@ -48,7 +50,7 @@ class Dibujos:
         |  / 
         |
         =========  LETRA ''' + tipo_letra + ''', TOTAL DE VIDAS:   '''+ vidas +'''    LETRA USADA:  '''+ letra_usada
-        print(error_cuatro)
+        sys.stdout.write(error_cuatro)
     def error_final(self, tipo_letra, vidas, letra_usada):
         error_final = '''
         +---+
@@ -58,4 +60,6 @@ class Dibujos:
         |  / \ 
         |
         =========  LETRA ''' + tipo_letra + ''', TOTAL DE VIDAS:   '''+ vidas +'''    LETRA USADA:  '''+ letra_usada
-        print(error_final)
+        sys.stdout.write(error_final)
+        
+    

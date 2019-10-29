@@ -1,3 +1,4 @@
+import sys
 class Print:
 
     def db_notfound(self):
@@ -15,68 +16,68 @@ class Print:
         + "3. - Salir\n")
         return opcion
     def juego_ahorcado(self):
-         print(" --------------- !!!JUEGO DEL AHORCADO!!!  ------------------\n")
+         sys.stdout.write("\n --------------- !!!JUEGO DEL AHORCADO!!!  ------------------\n")
     def sin_conexion(self):
-        print("\nNO SE ENCUENTRÓ NINGUNA BASE DE DATOS\n")
+        sys.stdout.write("\nNO SE ENCUENTRÓ NINGUNA BASE DE DATOS\n")
     def empecemos(self):
-        print("-- !!EMPECEMOS!! --")
-    def debe_reiniciar(self):
-        print("Debe reiniciar el juego para poder seguir jugando\n")
+        sys.stdout.write("-- !!EMPECEMOS!! --")
+    #POSIBLE SOLUCION
+    def debe_reiniciar(self, respuesta):
+        respuesta = ""
+        return respuesta
     def seleccione_opc_correcta(self):
-        print("INGRESE UNA OPCION DEL MENÚ CORRECTAMENTE")
+        sys.stdout.write("INGRESE UNA OPCION DEL MENÚ CORRECTAMENTE")
     def palabra_a_adivinar(self, variable):
-        print("La palabra adivinar es: " + variable)
+        sys.stdout.write("La palabra adivinar es: " + variable)
     #>>>>>>>>>>>>>>>>>>>>>>>>>>>>CLASE INGRESAR
     def agregar_palabra(self):
         opc = input("¿Desea agregar una palabra? (s/n)\n")
         return opc
     def se_agrego_correctamente(self):
-        print("La palabra se agregó correctamente en el texto \n")
+        sys.stdout.write("La palabra se agregó correctamente en el texto \n")
     def ingrese_una_palabra(self):
         palabra = str(input("Ingrese una palabra\n"))
         return palabra
     def ver_la_lista(self, variable):
-        print("lista" + variable)
+        sys.stdout.write("lista" + variable)
     #>>>>>>>>>>>>>>>>>>>>>>>>>>>>CLASE JUGAR
     def ingrese_letra(self):
         letra = (str(input("Ingrese una letra para adivinar la palabra\n")))
         return letra
     def solo_un_caracter(self):
-        print("INGRESE SOLO 1 CARACTER")
+        sys.stdout.write("INGRESE SOLO 1 CARACTER")
     def letras_correctas(self, ingresadas):
-        print("LETRAS INGRESADAS: " + ingresadas)
+        sys.stdout.write("LETRAS INGRESADAS: " + ingresadas)
     def letra_ya_ingresada(self):
-        print("ESTA LETRA YA LA HABÍAS INGRESADO")
+        sys.stdout.write("ESTA LETRA YA LA HABÍAS INGRESADO")
     def cadena(self, cadena):
-        print("CADENA: " + cadena)
+        sys.stdout.write("CADENA: " + cadena)
     def juego_terminado(self):
-        print("JUEGO TERMINADO")
+        sys.stdout.write("JUEGO TERMINADO")
     def vidas_terminadas(self):
-        print("SE TE TERMINARON TODAS TUS VIDAS")
+        sys.stdout.write("SE TE TERMINARON TODAS TUS VIDAS")
     def la_palabra_a_Adivinar_era(self,palabra):
-        print("La palabra adivinar era: " +palabra)
+        sys.stdout.write("La palabra adivinar era: " +palabra)
     def puntos_totales(self,puntos):
-         print("PUNTOS TOTALES: " + puntos)
+        sys.stdout.write("PUNTOS TOTALES: " + puntos)
     def completo_vidas(self):
-        print("COMPLETÓ TODAS LAS PALABRAS")
+        sys.stdout.write("COMPLETÓ TODAS LAS PALABRAS")
     def mostarar_letras_actuales(self, index, arreglo):
-        print(arreglo[0:index])
+        sys.stdout.write(str(arreglo[0:index]))
     #>>>>>>>>>>>>>>>>>>>>>>>>>>>>CLASE PALABRA ALEATORIA
     def cargando_datos_lista(self):
-         print("CARGANDO DATOS DE LA LISTA... \n")
+        sys.stdout.write("CARGANDO DATOS DE LA LISTA... \n")
     #>>>>>>>>>>>>>>>>>>>>>>>>>>>>CLASE BD
     def palabra_usada(self, palabra):
-        print("PALABRA USADA: " + palabra)
+        sys.stdout.write("PALABRA USADA: " + palabra)
     def palabras_ingresadas_a_bd(self):
-        print("\nPALABRAS INGRESADAS EN LA BASE DE DATOS:")
+       sys.stdout.write("\nPALABRAS INGRESADAS EN LA BASE DE DATOS:")
     def n(self):
-        print("\n")
+        sys.stdout.write("\n")
     def i(self,i):
-        print(i)
+        sys.stdout.write(str(i))
     def no_hay_conexion_en_la_bd(self):
-        print("!!!NO HAY CONEXION A LA BASE DE DATOS!!!\n"
-            + "SE LIMITARÁN ALGUNAS FUNCIONES")
-        return ""
+        sys.stdout.write("!!!NO HAY CONEXION A LA BASE DE DATOS!!!\n SE LIMITARÁN ALGUNAS FUNCIONES")
     #>>>>>>>>>>>>>>>>>>>>>>>>>>>>CLASE MENU GATO
     def menu_gato(self):
         opcion = input("---- MENU ----\n"
@@ -95,14 +96,20 @@ class Print:
         posicion = input("SELECCIONA UNA POSICIÓN\n" + posicion + "\n")
         return posicion
     def rango_fuera_del_indicado(self):
-        print("RANGO FUERA DEL INDICADO")
+        sys.stdout.write("RANGO FUERA DEL INDICADO")
     def ingrese_caracteres_correctos(self):
-        print("INGRESE LOS CARACTERES CORRECTOS PORFAVOR")
+        sys.stdout.write("INGRESE LOS CARACTERES CORRECTOS PORFAVOR")
     def se_repite(self):
-         print("SE REPITE")
+        sys.stdout.write("SE REPITE")
     def misma_posicion(self):
-        print("SE INGRESÓ LA MISMA POSICIÓN, INGRESE UNA POSICIÓN DIFERENTE Y QUE SEA CORRECTA")
+        sys.stdout.write("SE INGRESÓ LA MISMA POSICIÓN, INGRESE UNA POSICIÓN DIFERENTE Y QUE SEA CORRECTA")
     def nadie_gano(self):
-        print("JUEGO TERMINADO .... NADIE GANÓ !!!!")
+        sys.stdout.write("JUEGO TERMINADO .... NADIE GANÓ !!!!")
     def ganaste(self, jugador):
-        print("GANASTE " + jugador)
+        sys.stdout.write("GANASTE " + jugador)
+    #>>>>>>>>>>>>>>>>>>>>>>>>>>>LIMPIAR CONSOLA
+    def limpiar_consola(self):
+        import os
+        os.system('cls')
+    def jugador(self, jugador):
+        sys.stdout.write(jugador)

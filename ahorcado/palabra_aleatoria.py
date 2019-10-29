@@ -6,14 +6,12 @@ prints = Print()
 class Palabra_Aleatoria:
     import mysql.connector
     palabra = ""
-    aleatorio = []
+    # aleatorio = []
     lista1 = []
     archivo_escrito = []
-    listaBD = []
     def __init__(self, archivo_escrito, archivo_juego):
         self.lista1 = [line.rstrip() for line in open(archivo_escrito)]
         self.archivo_escrito = list(set(self.lista1))
-        prints.cargando_datos_lista()
 
     def seleccionarpalabra(self):
         if len(self.archivo_escrito) == 0:

@@ -9,7 +9,6 @@ class Conexion:
             'password' : '',
             'database' : 'python'
         }
-
         try:
             prints.palabra_usada(str(palabra))
             conexion = mysql.connector.connect(**db)
@@ -66,9 +65,16 @@ class Conexion:
             #     resultado = cursor.fetchone()
             #     print(resultado)
             else:
+                print("PRUEBON")
                 ingresar = "INSERT INTO palabras(id, palabra) VALUES (%s, %s)"
                 cursor.execute(ingresar,('null', palabra))
+                print("PRUEBONZOTE")
             conexion.commit()
             return resultado
-        except:
-            prints.no_hay_conexion_en_la_bd()
+        except Error as e:
+            print("Error while connecting to MySQL", e)
+        # finally:
+        #     if (conexion.is_connected()):
+        #     cursor.close()
+        #     conexion.close()
+        #     # print("MySQL connection is closed")
