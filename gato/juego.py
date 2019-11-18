@@ -28,25 +28,18 @@ class Juego:
         VENTANA_VERT = 600  # Alto de la ventana
         FPS = 60  # Fotogramas por segundo
         NEGRO = (0, 0, 0)  # Color del fondo de la ventana (RGB)
+        white = (255, 255, 255)
         
         pygame.init()
 
         # Inicialización de la superficie de dibujo (display surface)
         ventana = pygame.display.set_mode((VENTANA_HORI, VENTANA_VERT))
         pygame.display.set_caption("GATO_GAME")
-        
-        white = (255, 255, 255)
-
-        # Bucle principal
             
         font = pygame.font.Font(None, 30)
-        #tablero
-        # pygame.image.load(jugar.dibujo()).convert_alpha()
-        tablero_surface = font.render(u''+ self.board +' \n '+ self.board2 +' \n '+ self.board3 +'', True, white)
-            
+        tablero_surface = font.render(u''+ self.board +' \n '+ self.board2 +' \n '+ self.board3 +'', True, white)     
         ventana.blit(tablero_surface, (10,10))
-        time.sleep(2)
-        pygame.event.clear()
+        
             # ventana.blit(tablero, (600,400))
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -56,8 +49,6 @@ class Juego:
 
         pygame.display.flip()
         pygame.time.Clock().tick(FPS)
-
-        # pygame.quit()
 
     def posiciones(self, posicion):
         self.turnos()
