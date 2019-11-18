@@ -21,7 +21,7 @@ class Juego:
     FONDO = (32, 30, 32)
     NEGRO = (0, 0, 0)
 
-    def pygame(self):
+    def pygame(self, jugador):
         VENTANA_HORI = 800  # Ancho de la ventana
         VENTANA_VERT = 600  # Alto de la ventana
         FPS = 60  # Fotogramas por segundo
@@ -42,9 +42,14 @@ class Juego:
         tablero_surface1 = font.render(u''+ self.board1 +'', True, white)
         tablero_surface2 = font.render(u''+ self.board2 +'', True, white)
         tablero_surface3 = font.render(u''+ self.board3 +'', True, white)
-        player = font.render(u''+ self.jugador +'', True, white)
-           
-        ventana.blit(player, (50,5))
+        
+        if self.turno % 2:
+            player = font.render(u' TURNO DEL JUGADOR 2 (o)', True, white)
+        else:
+            player = font.render(u' TURNO DEL JUGADOR 1 (x)', True, white)
+        
+        if self.intentos != 1 and self.intentos != 2 and len(self.position) > 0:
+            ventana.blit(player, (50,5))
         ventana.blit(tablero_surface1, (50,25))
         pygame.draw.line(ventana, (250, 250, 250), (50, 45), (220, 45), 3)
         ventana.blit(tablero_surface2, (50,55))
@@ -60,14 +65,12 @@ class Juego:
         elif self.intentos == 2:
             self.jugador = ""
             ventana.blit(win2, (50,120))
-        
-            # ventana.blit(tablero, (600,400))
+            
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 jugando = False
                     
         pygame.display.update()
-
         pygame.display.flip()
         pygame.time.Clock().tick(FPS)
 

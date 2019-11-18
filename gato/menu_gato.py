@@ -23,7 +23,7 @@ class Gato_Menu:
                         if jugar.derrota_mortal == 1:
                             print("\nINGRESE UNA POSICIÓN VÁLIDA...")
                             jugar.derrota_mortal = 0
-                        jugar.pygame()
+                        jugar.pygame(jugar.jugador)
                     if jugar.intentos == 1:
                         print("\n ---- ¡¡ GANASTE JUGADOR 1 ( x ) !! ---- " + "\n")
                         # print(jugar.board)
