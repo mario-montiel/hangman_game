@@ -4,9 +4,6 @@ import os
 import numpy as np
 import pygame
 
-
-
-
 class Juego:
     intentos = 0
     jugador = ""

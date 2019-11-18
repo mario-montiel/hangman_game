@@ -1,5 +1,6 @@
 from gato.juego import Juego
 import os
+import pygame 
 jugar = Juego()
 class Gato_Menu:
     def __init__(self):
