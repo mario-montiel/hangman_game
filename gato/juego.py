@@ -3,6 +3,7 @@ import sys
 import os
 import numpy as np
 import pygame
+from pygame.locals import *
 
 class Juego:
     intentos = 0
@@ -26,16 +27,39 @@ class Juego:
         FPS = 60  # Fotogramas por segundo
         NEGRO = (0, 0, 0)  # Color del fondo de la ventana (RGB)
         white = (255, 255, 255)
-        
+        font = pygame.font.Font(None, 30)
+        # espacio = font.render(u'\n', True, NEGRO)
         pygame.init()
 
         # Inicialización de la superficie de dibujo (display surface)
         ventana = pygame.display.set_mode((VENTANA_HORI, VENTANA_VERT))
         pygame.display.set_caption("GATO_GAME")
+        
+        # pygame.draw.line(ventana, (0, 52, 250), (60, 80), (130, 100), 8)
+        # pygame.display.flip()
             
-        font = pygame.font.Font(None, 30)
-        tablero_surface = font.render(u''+ self.board +' \n '+ self.board2 +' \n '+ self.board3 +'', True, white)     
-        ventana.blit(tablero_surface, (10,10))
+        
+        tablero_surface1 = font.render(u''+ self.board1 +'', True, white)
+        tablero_surface2 = font.render(u''+ self.board2 +'', True, white)
+        tablero_surface3 = font.render(u''+ self.board3 +'', True, white)
+        player = font.render(u''+ self.jugador +'', True, white)
+           
+        ventana.blit(player, (50,5))
+        ventana.blit(tablero_surface1, (50,25))
+        pygame.draw.line(ventana, (250, 250, 250), (50, 45), (220, 45), 3)
+        ventana.blit(tablero_surface2, (50,55))
+        pygame.draw.line(ventana, (250, 250, 250), (50, 80), (220, 80), 3)
+        ventana.blit(tablero_surface3, (50,90))
+        
+        win1 = font.render(u'"--!!Ganaste Jugador 1 (x)!!--"', True, white)
+        win2 = font.render(u'"--!!Ganaste Jugador 2 (o)!!--"', True, white)
+        
+        if self.intentos == 1:
+            self.jugador = ""
+            ventana.blit(win1, (50,120))
+        elif self.intentos == 2:
+            self.jugador = ""
+            ventana.blit(win2, (50,120))
         
             # ventana.blit(tablero, (600,400))
         for event in pygame.event.get():
@@ -101,52 +125,43 @@ class Juego:
             return self.jugador
 
     def dibujo(self):
-        self.board = '''
-        |  ''' + self.tablero[0, 0] + '''  |  ''' + self.tablero[0, 1] + '''  |  ''' + self.tablero[0, 2] + '''  |'''
+        self.board1 = '''|  ''' + self.tablero[0, 0] + '''  |  ''' + self.tablero[0, 1] + '''  |  ''' + self.tablero[0, 2] + '''  |'''
         
         self.board2 = '''|  ''' + self.tablero[1, 0] + '''  |  ''' + self.tablero[1, 1] + '''  |  ''' + self.tablero[1, 2] + '''  |'''
         
         self.board3 =  '''|  ''' + self.tablero[2, 0] + '''  |  ''' + self.tablero[2, 1] + '''  |  ''' + self.tablero[2, 2] + '''  | '''
         
         
-        # self.board = '''
-        # -------  ------  ----
-        # |  ''' + self.tablero[0, 0] + '''  |  ''' + self.tablero[0, 1] + '''  |  ''' + self.tablero[0, 2] + '''  |    
-        # -------  ------  ----
-        # |  ''' + self.tablero[1, 0] + '''  |  ''' + self.tablero[1, 1] + '''  |  ''' + self.tablero[1, 2] + '''  |    
-        # -------  ------  ----
-        # |  ''' + self.tablero[2, 0] + '''  |  ''' + self.tablero[2, 1] + '''  |  ''' + self.tablero[2, 2] + '''  | 
-        # -------  ------  ---- 
-        # '''
+        self.board = '''
+        -------  ------  ----
+        |  ''' + self.tablero[0, 0] + '''  |  ''' + self.tablero[0, 1] + '''  |  ''' + self.tablero[0, 2] + '''  |    
+        -------  ------  ----
+        |  ''' + self.tablero[1, 0] + '''  |  ''' + self.tablero[1, 1] + '''  |  ''' + self.tablero[1, 2] + '''  |    
+        -------  ------  ----
+        |  ''' + self.tablero[2, 0] + '''  |  ''' + self.tablero[2, 1] + '''  |  ''' + self.tablero[2, 2] + '''  | 
+        -------  ------  ---- 
+        '''
         
         
-        return self.board + self.board2 + self.board3
+        return self.board
 
     def ganarJugador1(self):
         if self.tablero[0, 0] == 'x' and self.tablero[0, 1] == 'x' and self.tablero[0, 2] == 'x':
             self.intentos = 1
-            pygame.quit()
         elif self.tablero[1, 0] == 'x' and self.tablero[1, 1] == 'x' and self.tablero[1, 2] == 'x':
             self.intentos = 1
-            pygame.quit()
         elif self.tablero[2, 0] == 'x' and self.tablero[2, 1] == 'x' and self.tablero[2, 2] == 'x':
             self.intentos = 1
-            pygame.quit()
         elif self.tablero[0, 0] == 'x' and self.tablero[1, 1] == 'x' and self.tablero[2, 2] == 'x':
             self.intentos = 1
-            pygame.quit()
         elif self.tablero[2, 0] == 'x' and self.tablero[1, 1] == 'x' and self.tablero[0, 2] == 'x':
             self.intentos = 1
-            pygame.quit()
         elif self.tablero[0, 0] == 'x' and self.tablero[1, 0] == 'x' and self.tablero[2, 0] == 'x':
             self.intentos = 1
-            pygame.quit()
         elif self.tablero[0, 1] == 'x' and self.tablero[1, 1] == 'x' and self.tablero[2, 1] == 'x':
             self.intentos = 1
-            pygame.quit()
         elif self.tablero[0, 2] == 'x' and self.tablero[1, 2] == 'x' and self.tablero[2, 2] == 'x':
             self.intentos = 1
-            pygame.quit()
         return self.intentos
             
     def ganarJugador2(self):
