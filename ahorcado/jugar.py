@@ -1,6 +1,12 @@
 import os
 from dibujos.dibujos import Dibujos
 from txt.txt import Texto
+import pygame
+from pygame.locals import *
+
+pygame.init()
+ventana = pygame.display.set_mode((800,600))
+pygame.display.set_caption("JUEGO DEL AHORCADO")
 dibujos = Dibujos()
 txt = Texto()
 class Jugar:
