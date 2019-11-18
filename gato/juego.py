@@ -2,6 +2,10 @@
 import sys
 import os
 import numpy as np
+import pygame
+
+
+
 
 class Juego:
     intentos = 0
@@ -10,9 +14,50 @@ class Juego:
     tablero = np.array(
         [['00', '01', '02'], ['10', '11', '12'], ['20', '21', '22']])
     board = ""
+    board2 = ""
+    board3 = ""
     position = ['00', '01', '02', '10', '11', '12', '20', '21', '22']
     derrota_mortal = 0
     validar = 0
+    
+    FONDO = (32, 30, 32)
+    NEGRO = (0, 0, 0)
+
+    def pygame(self):
+        VENTANA_HORI = 800  # Ancho de la ventana
+        VENTANA_VERT = 600  # Alto de la ventana
+        FPS = 60  # Fotogramas por segundo
+        NEGRO = (0, 0, 0)  # Color del fondo de la ventana (RGB)
+        
+        pygame.init()
+
+        # Inicialización de la superficie de dibujo (display surface)
+        ventana = pygame.display.set_mode((VENTANA_HORI, VENTANA_VERT))
+        pygame.display.set_caption("GATO_GAME")
+        
+        white = (255, 255, 255)
+
+        # Bucle principal
+            
+        font = pygame.font.Font(None, 30)
+        #tablero
+        # pygame.image.load(jugar.dibujo()).convert_alpha()
+        tablero_surface = font.render(u''+ self.board +' \n '+ self.board2 +' \n '+ self.board3 +'', True, white)
+            
+        ventana.blit(tablero_surface, (10,10))
+        time.sleep(2)
+        pygame.event.clear()
+            # ventana.blit(tablero, (600,400))
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                jugando = False
+                    
+        pygame.display.update()
+
+        pygame.display.flip()
+        pygame.time.Clock().tick(FPS)
+
+        # pygame.quit()
 
     def posiciones(self, posicion):
         self.turnos()
@@ -69,33 +114,51 @@ class Juego:
 
     def dibujo(self):
         self.board = '''
-        -------  ------  ----
-        |  ''' + self.tablero[0, 0] + '''  |  ''' + self.tablero[0, 1] + '''  |  ''' + self.tablero[0, 2] + '''  |    
-        -------  ------  ----
-        |  ''' + self.tablero[1, 0] + '''  |  ''' + self.tablero[1, 1] + '''  |  ''' + self.tablero[1, 2] + '''  |    
-        -------  ------  ----
-        |  ''' + self.tablero[2, 0] + '''  |  ''' + self.tablero[2, 1] + '''  |  ''' + self.tablero[2, 2] + '''  | 
-        -------  ------  ---- 
-        '''
-        return self.board
+        |  ''' + self.tablero[0, 0] + '''  |  ''' + self.tablero[0, 1] + '''  |  ''' + self.tablero[0, 2] + '''  |'''
+        
+        self.board2 = '''|  ''' + self.tablero[1, 0] + '''  |  ''' + self.tablero[1, 1] + '''  |  ''' + self.tablero[1, 2] + '''  |'''
+        
+        self.board3 =  '''|  ''' + self.tablero[2, 0] + '''  |  ''' + self.tablero[2, 1] + '''  |  ''' + self.tablero[2, 2] + '''  | '''
+        
+        
+        # self.board = '''
+        # -------  ------  ----
+        # |  ''' + self.tablero[0, 0] + '''  |  ''' + self.tablero[0, 1] + '''  |  ''' + self.tablero[0, 2] + '''  |    
+        # -------  ------  ----
+        # |  ''' + self.tablero[1, 0] + '''  |  ''' + self.tablero[1, 1] + '''  |  ''' + self.tablero[1, 2] + '''  |    
+        # -------  ------  ----
+        # |  ''' + self.tablero[2, 0] + '''  |  ''' + self.tablero[2, 1] + '''  |  ''' + self.tablero[2, 2] + '''  | 
+        # -------  ------  ---- 
+        # '''
+        
+        
+        return self.board + self.board2 + self.board3
 
     def ganarJugador1(self):
         if self.tablero[0, 0] == 'x' and self.tablero[0, 1] == 'x' and self.tablero[0, 2] == 'x':
             self.intentos = 1
+            pygame.quit()
         elif self.tablero[1, 0] == 'x' and self.tablero[1, 1] == 'x' and self.tablero[1, 2] == 'x':
             self.intentos = 1
+            pygame.quit()
         elif self.tablero[2, 0] == 'x' and self.tablero[2, 1] == 'x' and self.tablero[2, 2] == 'x':
             self.intentos = 1
+            pygame.quit()
         elif self.tablero[0, 0] == 'x' and self.tablero[1, 1] == 'x' and self.tablero[2, 2] == 'x':
             self.intentos = 1
+            pygame.quit()
         elif self.tablero[2, 0] == 'x' and self.tablero[1, 1] == 'x' and self.tablero[0, 2] == 'x':
             self.intentos = 1
+            pygame.quit()
         elif self.tablero[0, 0] == 'x' and self.tablero[1, 0] == 'x' and self.tablero[2, 0] == 'x':
             self.intentos = 1
+            pygame.quit()
         elif self.tablero[0, 1] == 'x' and self.tablero[1, 1] == 'x' and self.tablero[2, 1] == 'x':
             self.intentos = 1
+            pygame.quit()
         elif self.tablero[0, 2] == 'x' and self.tablero[1, 2] == 'x' and self.tablero[2, 2] == 'x':
             self.intentos = 1
+            pygame.quit()
         return self.intentos
             
     def ganarJugador2(self):

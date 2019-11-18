@@ -22,16 +22,17 @@ class Gato_Menu:
                         if jugar.derrota_mortal == 1:
                             print("\nINGRESE UNA POSICIÓN VÁLIDA...")
                             jugar.derrota_mortal = 0
+                        jugar.pygame()
                     if jugar.intentos == 1:
                         print("\n ---- ¡¡ GANASTE JUGADOR 1 ( x ) !! ---- " + "\n")
-                        print(jugar.board)
+                        # print(jugar.board)
                         try:
                             db.database('x')
                         except:
                             print("NO SE ENCONTRÓ NINGUNA BASE DE DATOSx")
                     if jugar.intentos == 2:
                         print("\n ---- ¡¡ GANASTE JUGADOR 2 ( 0 ) !! ---- " + "\n")
-                        print(jugar.board)
+                        # print(jugar.board)
                         try:
                             db.database('o')
                         except:
