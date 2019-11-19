@@ -101,7 +101,8 @@ class Conexion:
             conexion.commit()
             return resultado
         except Error as e:
-            print("ERROR: "  + str(e))
+            # print("ERROR: "  + str(e))
+            print(e)
             # if e:
             #     self.resultado = 1
         # finally:

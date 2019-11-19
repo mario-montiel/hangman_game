@@ -1,1 +1,21 @@
 lapiz
+['_', 'a', '_', '_', '_']
+
+
+        +---+
+        |   |
+        |
+        |
+        |
+        |
+        =========  LETRA CORRECTA, TOTAL DE VIDAS:   5    LETRA USADA:  
+
+
+
+
+
+
+
+
+
+

@@ -2,6 +2,8 @@ import os
 from ahorcado.ingresar import Ingresar
 from ahorcado.jugar import Jugar
 from ahorcado.palabra_aleatoria import Palabra_Aleatoria
+import pygame
+from pygame.locals import *
 
 ingresar = Ingresar("palabras.txt")
 
@@ -63,11 +65,19 @@ class Ahorcado_Menu:
                 aleatorio.seleccionarpalabra()
                 print(" ----- EMPECEMOS ------")
                 usuario = input("\n INGRESE UN USUARIO: \n")
-                db.usuario = usuario
-                db.database(3)
+                
+                try:
+                    from database.bd import Conexion
+                    db = Conexion()
+                    db.usuario = usuario
+                    db.database(3)
+                    db.palabra = x
+                except:
+                    print("NO SE HA ENCONTRADO NINGUNA BASE DE DATOS MY FRIEND")
                 jugar = Jugar()
+                jugar.usuario = usuario
                 x = aleatorio.palabra
-                db.palabra = x
+                
                 jugar.palabra = x
                 jugar.limpiar()
                 while jugar.derrota_final() != 1 and jugar.victoria_final() != 1:
@@ -76,6 +86,7 @@ class Ahorcado_Menu:
                     jugar.encuentra(letra)
                     print(jugar.arreglo())
                     jugar.derrota_final()
+                    jugar.pygame()
                 try:
                     db.database(x)
                 except:

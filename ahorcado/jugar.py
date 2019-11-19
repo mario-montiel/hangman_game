@@ -25,6 +25,7 @@ class Jugar:
     existe = False
     derrota_mortal = 0
     terminar = 0
+    usuario = ""
 
     def encuentra(self, letra_ingresada_main):
             cadena = self.palabra
@@ -55,6 +56,38 @@ class Jugar:
             self.vidas()
             self.dibujar()
             self.derrota_final()
+            
+    def pygame(self):
+        VENTANA_HORI = 800  # Ancho de la ventana
+        VENTANA_VERT = 600  # Alto de la ventana
+        FPS = 60  # Fotogramas por segundo
+        NEGRO = (0, 0, 0)  # Color del fondo de la ventana (RGB)
+        BLANCO = (255, 255, 255)
+        # EL TIPO DE TAMAÑO Y TIPOGRAFÍA QUE TENDRÁN LAS LETRAS
+        font = pygame.font.Font(None, 30)
+        pygame.init()
+
+        # SE PONEN EL  TAMAÑO DE LA PANTALLA DEL PYGAME Y EL TITULO DE ESTE.
+        ventana = pygame.display.set_mode((VENTANA_HORI, VENTANA_VERT))
+        pygame.display.set_caption("GATO_GAME")
+            
+        #VENTANA ES DONDE SE VA A IMPRIMIR, BLANCO EL COLOR QUE VA A OBTENER EL DIBUJO (LINEA), EL
+        #PRIMER PARENTESIS (DONDE VA A INICIAR [X], EL TAMAÑO DE LA LINEA), EL SEGUNDO
+        # PARENTESIS (DONDE VA A INICIAR [Y], EL TAMAÑO DE LA LINEA)
+        pygame.draw.line(ventana, BLANCO, (50, 355), (50, 50), 3)
+        pygame.draw.line(ventana, BLANCO, (50, 45), (220, 45), 3)
+        pygame.draw.line(ventana, BLANCO, (220, 150), (220, 45), 3)
+        
+        
+        # SE CIERRA CON EL BOTON X QUE ESTA EN LA PARTE SUPERIOR DERECHA
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                jugando = False
+                
+        # SE ACTUALIZAN LOS ITEMS CON CADA ACCIÓN 
+        pygame.display.update()
+        pygame.display.flip()
+        pygame.time.Clock().tick(FPS)
             
     def arreglo(self):
         return self.pruebon[0:self.indice]
